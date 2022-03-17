@@ -1,3 +1,14 @@
+import { useState, useEffect } from 'react';
+import { useSession } from 'next-auth/react';
+
+// State
+import { useRecoilState } from 'recoil';
+import { playlistIdState } from '../atoms/playlistAtom';
+
+// Spotify Api
+import useSpotify from '../hooks/useSpotify';
+
+// Icons
 import {
   HomeIcon,
   SearchIcon,
@@ -6,13 +17,13 @@ import {
   HeartIcon,
   RssIcon,
 } from '@heroicons/react/outline';
-import { useState, useEffect } from 'react';
-import { useSession } from 'next-auth/react';
-import useSpotify from '../hooks/useSpotify';
 
-// Sidebar Component
+/****************************************
+ * - Sidebar.jsx -
+ ***************************************/
 const Sidebar = () => {
   const [playlists, setPlaylists] = useState([]);
+  const [_, setPlaylistId] = useRecoilState(playlistIdState);
   const { data: session } = useSession();
   const spotify = useSpotify();
 
@@ -57,7 +68,10 @@ const Sidebar = () => {
 
         {/* Playlist Content */}
         {playlists.map(playlist => (
-          <p key={playlist.id} className='cursor-pointer hover:text-white'>
+          <p
+            key={playlist.id}
+            className='cursor-pointer hover:text-white'
+            onClick={() => setPlaylistId(playlist.id)}>
             {playlist.name}
           </p>
         ))}

@@ -4,6 +4,11 @@ import { shuffle } from 'lodash';
 // Components
 import UserMenu from './UserMenu';
 
+// State
+import { useRecoilValue } from 'recoil';
+import { playlistIdState } from '../atoms/playlistAtom';
+
+// Background gradients.
 const bgColors = [
   'from-indigo-500',
   'from-blue-500',
@@ -16,12 +21,16 @@ const bgColors = [
   'from-pink-500',
 ];
 
+/****************************************
+ * - Center.jsx -
+ ***************************************/
 const Center = () => {
   const [bgColor, setBgColor] = useState(null);
+  const playlistId = useRecoilValue(playlistIdState);
 
   useEffect(() => {
     setBgColor(shuffle(bgColors).pop());
-  }, []);
+  }, [playlistId]);
 
   return (
     <div className='flex-grow'>
