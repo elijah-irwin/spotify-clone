@@ -29,12 +29,15 @@ const Sidebar = () => {
 
   useEffect(() => {
     if (spotify.getAccessToken()) {
-      spotify.getUserPlaylists().then(data => setPlaylists(data.body.items));
+      spotify
+        .getUserPlaylists()
+        .then(data => setPlaylists(data.body.items))
+        .catch(err => console.log(err));
     }
   }, [session, spotify]);
 
   return (
-    <div className='text-gray-500 p-5 border-r border-gray-900 overflow-y-scroll scrollbar-hide h-screen'>
+    <div className='text-gray-500 p-5 border-r border-gray-900 overflow-y-scroll scrollbar-hide h-screen w-[15rem] hidden md:inline-flex'>
       <div className='space-y-4'>
         <button className='flex items-center space-x-2 hover:text-white'>
           <HomeIcon className='h-5 w-5' />
