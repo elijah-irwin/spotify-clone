@@ -1,7 +1,7 @@
 import Head from 'next/head';
-import { signOut } from 'next-auth/react';
 
 // Components
+import Center from '../components/Center';
 import Sidebar from '../components/Sidebar';
 
 // Home Page Component
@@ -17,12 +17,9 @@ const Home = () => {
         <link rel='icon' href='/favicon.ico' />
       </Head>
 
-      <main>
+      <main className='flex'>
         <Sidebar />
-        {/* Center */}
-        <button className='text-white' onClick={() => signOut()}>
-          Logout
-        </button>
+        <Center />
       </main>
 
       <div>{/* Player Controls */}</div>
