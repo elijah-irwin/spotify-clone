@@ -1,14 +1,16 @@
 import Image from 'next/image';
 import { getProviders, signIn } from 'next-auth/react';
 
+/****************************************
+ * - Login Page -
+ ***************************************/
 const Login = ({ providers }) => {
   return (
     <div className='h-screen bg-black flex flex-col items-center justify-center'>
-      <Image
+      <img
         src='https://links.papareact.com/9xl'
         alt='Spotify Logo'
-        width={200}
-        height={200}
+        className='w-52'
       />
       {Object.values(providers).map(provider => (
         <div key={provider.name}>

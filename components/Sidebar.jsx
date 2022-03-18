@@ -15,7 +15,6 @@ import {
   LibraryIcon,
   PlusCircleIcon,
   HeartIcon,
-  RssIcon,
 } from '@heroicons/react/outline';
 
 /****************************************
@@ -37,8 +36,8 @@ const Sidebar = () => {
   }, [session, spotify]);
 
   return (
-    <div className='text-gray-500 p-5 border-r border-gray-900 overflow-y-scroll scrollbar-hide h-screen w-[15rem] hidden md:inline-flex'>
-      <div className='space-y-4'>
+    <div className='text-gray-500 p-5 overflow-y-scroll scrollbar-hide h-screen min-w-[14rem] max-w-[14rem] hidden md:inline-flex pb-36'>
+      <div className='space-y-4 flex-grow'>
         <button className='flex items-center space-x-2 hover:text-white'>
           <HomeIcon className='h-5 w-5' />
           <p>Home</p>
@@ -52,7 +51,7 @@ const Sidebar = () => {
           <p>Your Library</p>
         </button>
 
-        <hr className='border-t-[.1px] border-gray-900' />
+        <hr className='border-t-[.1px] border-gray-800' />
 
         <button className='flex items-center space-x-2 hover:text-white'>
           <PlusCircleIcon className='h-5 w-5' />
@@ -62,12 +61,8 @@ const Sidebar = () => {
           <HeartIcon className='h-5 w-5' />
           <p>Liked Songs</p>
         </button>
-        <button className='flex items-center space-x-2 hover:text-white'>
-          <RssIcon className='h-5 w-5' />
-          <p>Your Episodes</p>
-        </button>
 
-        <hr className='border-t-[.1px] border-gray-900' />
+        <hr className='border-t-[.1px] border-gray-800' />
 
         {/* Playlist Content */}
         {playlists.map(playlist => (

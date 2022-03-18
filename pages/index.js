@@ -3,9 +3,12 @@ import Head from 'next/head';
 
 // Components
 import Center from '../components/Center';
+import PlayerControls from '../components/PlayerControls';
 import Sidebar from '../components/Sidebar';
 
-// Home Page Component
+/****************************************
+ * - Home Page -
+ ***************************************/
 const Home = () => {
   return (
     <div className='bg-black h-screen overflow-hidden'>
@@ -23,7 +26,9 @@ const Home = () => {
         <Center />
       </main>
 
-      <div>{/* Player Controls */}</div>
+      <div className='sticky bottom-0'>
+        <PlayerControls />
+      </div>
     </div>
   );
 };
