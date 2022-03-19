@@ -5,9 +5,11 @@ import { playlistState } from '../atoms/playlistAtom';
 // Components
 import Song from './Song';
 
+/****************************************
+ * - Songs.jsx -
+ ***************************************/
 const Songs = () => {
   const playlist = useRecoilValue(playlistState);
-  console.log(playlist);
 
   return (
     <div className='text-white px-8 flex flex-col space-y-1 pb-28'>

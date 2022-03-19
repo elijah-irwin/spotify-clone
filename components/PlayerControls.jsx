@@ -1,8 +1,5 @@
 import { useState, useEffect, useCallback } from 'react';
-import {
-  HeartIcon,
-  VolumeUpIcon as VolumeDownIcon,
-} from '@heroicons/react/outline';
+import { VolumeUpIcon as VolumeDownIcon } from '@heroicons/react/outline';
 import {
   FastForwardIcon,
   PauseIcon,
@@ -34,7 +31,7 @@ const PlayerControls = () => {
   const [currentTrackId, setCurrentTrackId] =
     useRecoilState(currentTrackIdState);
   const [isPlaying, setIsPlaying] = useRecoilState(isPlayingState);
-  const [volume, setVolume] = useState(50);
+  const [volume, setVolume] = useState(100);
   const songInfo = useSongInfo();
 
   const handlePlayPause = () => {
@@ -62,7 +59,7 @@ const PlayerControls = () => {
       spotify.getMyCurrentPlaybackState().then(data => {
         setIsPlaying(data.body?.is_playing);
       });
-      setVolume(50);
+      setVolume(100);
     }
   }, [
     currentTrackId,
@@ -77,7 +74,7 @@ const PlayerControls = () => {
 
   // Render
   return (
-    <div className='h-24 bg-gradient-to-b border-t border-gray-900 from-black to-[#161716] text-white grid grid-cols-3 px-2 md:px-8'>
+    <div className='h-24 bg-black border-t border-gray-900 text-white grid grid-cols-3 px-2 md:px-8'>
       {/* Left */}
       <div className='flex items-center space-x-4'>
         <img
@@ -86,18 +83,26 @@ const PlayerControls = () => {
         />
         <div>
           <h3>{songInfo?.name}</h3>
-          <p>{songInfo?.artists?.[0]?.name}</p>
+          <p className='text-gray-500 text-sm'>
+            {songInfo?.artists?.[0]?.name}
+          </p>
         </div>
       </div>
 
       {/* Middle */}
-      <div className='flex items-center justify-evenly'>
+      <div className='flex items-center justify-center space-x-10'>
         <SwitchHorizontalIcon className='button hidden md:inline' />
         <RewindIcon className='button' />
         {isPlaying ? (
-          <PauseIcon className='button w-10 h-10' onClick={handlePlayPause} />
+          <PauseIcon
+            className='button w-10 h-10 fill-white'
+            onClick={handlePlayPause}
+          />
         ) : (
-          <PlayIcon className='button w-10 h-10' onClick={handlePlayPause} />
+          <PlayIcon
+            className='button w-10 h-10 fill-white'
+            onClick={handlePlayPause}
+          />
         )}
         <FastForwardIcon className='button' />
         <ReplyIcon className='button hidden md:inline' />
@@ -110,7 +115,7 @@ const PlayerControls = () => {
           type='range'
           min={0}
           max={100}
-          className='w-16 md:w-28 cursor-pointer'
+          className='w-16 md:w-28 cursor-pointer bg-green-700'
           onChange={e => setVolume(Number(e.target.value))}
           value={volume}
         />

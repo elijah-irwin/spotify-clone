@@ -28,7 +28,7 @@ const Song = ({ track, order }) => {
   // Render
   return (
     <div
-      className='grid grid-cols-2 text-gray-500 py-4 px-5 hover:bg-gray-900 rounded-lg'
+      className='grid grid-cols-2 text-gray-500 py-4 px-5 hover:bg-gray-900 rounded-lg cursor-pointer'
       onClick={playSong}>
       <div className='flex items-center space-x-4'>
         <p>{order + 1}</p>

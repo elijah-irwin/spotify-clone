@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import { getProviders, signIn } from 'next-auth/react';
 
 /****************************************
@@ -6,21 +5,60 @@ import { getProviders, signIn } from 'next-auth/react';
  ***************************************/
 const Login = ({ providers }) => {
   return (
-    <div className='h-screen bg-black flex flex-col items-center justify-center'>
-      <img
-        src='https://links.papareact.com/9xl'
-        alt='Spotify Logo'
-        className='w-52'
-      />
-      {Object.values(providers).map(provider => (
-        <div key={provider.name}>
-          <button
-            className='bg-[#18D860] text-white py-3 px-5 m-10 rounded-full'
-            onClick={() => signIn(provider.id, { callbackUrl: '/' })}>
-            Login with {provider.name}
-          </button>
+    <div className='min-h-screen bg-black grid lg:grid-cols-2 items-center gap-15 px-5 md:px-40 py-10 xl:px-80 gap-y-20  text-white'>
+      {/* Left */}
+      <div className=''>
+        <h1 className='font-bold text-5xl md:text-8xl mb-10'>Spotify Clone</h1>
+        <h3 className='font-bold text-xl pb-2'>Disclaimer</h3>
+        <p className='pb-2'>
+          Turns out Spotify doesnt really want you building an alternative
+          web-player. As such, the following project simply allows you to
+          control the playback state of your current Spotify session.
+        </p>
+        <p className='pb-6'>
+          <span className='font-bold'>Ex. </span>Open and play a song on any
+          actual Spotify player (web-player, desktop app, or mobile app). You
+          can then use this Spotify Clone project to browse your playlists, play
+          songs, and change the volume. Actual playback will occur in the
+          originally selected player.
+        </p>
+        <h3 className='font-bold text-xl pb-2'>Features</h3>
+        <div className='grid grid-cols-3 gap-x-10 gap-y-1 pb-6'>
+          <p>Spotify Auth</p>
+          <p>Playlist Syncing</p>
+          <p>Song Selection</p>
+          <p>Volume Controls</p>
+          <p>Album Artwork</p>
+          <p>Session Persistance</p>
         </div>
-      ))}
+        <h3 className='font-bold text-xl pb-2'>Tools</h3>
+        <div className='grid grid-cols-3 gap-x-10 gap-y-1'>
+          <p>Next</p>
+          <p>NextAuth</p>
+          <p>TailwindCSS</p>
+          <p>Recoil</p>
+          <p>Spotify API</p>
+          <p>Vercel</p>
+        </div>
+      </div>
+
+      {/* Right */}
+      <div className='flex flex-col align-middle items-center'>
+        <img
+          src='https://links.papareact.com/9xl'
+          alt='Spotify Logo'
+          className='w-52'
+        />
+        {Object.values(providers).map(provider => (
+          <div key={provider.name}>
+            <button
+              className='bg-[#18D860] text-white py-3 px-5 m-10 rounded-full'
+              onClick={() => signIn(provider.id, { callbackUrl: '/' })}>
+              Login with {provider.name}
+            </button>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

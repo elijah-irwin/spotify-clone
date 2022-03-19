@@ -37,8 +37,6 @@ const Center = () => {
     setBgColor(shuffle(bgColors).pop());
   }, [playlistId]);
 
-  console.log(playlistId);
-
   // Re-fetch playlist when playlistId changes.
   useEffect(() => {
     spotify
@@ -46,8 +44,6 @@ const Center = () => {
       .then(data => setPlaylist(data.body))
       .catch(err => console.log(err));
   }, [playlistId, spotify, setPlaylist]);
-
-  console.log(playlistId);
 
   // Render
   return (
@@ -58,13 +54,12 @@ const Center = () => {
         <img
           src={playlist?.images?.[0]?.url}
           alt='Playlist icon.'
-          className='h-44 w-44 shadow-2xl'
+          className='h-52 w-52 shadow-2xl'
         />
         <div>
-          <p>PLAYLIST</p>
-          <h1 className='text-2xl md:text-3xl xl:text-5xl font-bold'>
-            {playlist?.name}
-          </h1>
+          <p className='font-bold'>PLAYLIST</p>
+          <h1 className='text-7xl font-bold pb-5'>{playlist?.name}</h1>
+          <p className='text-slate-300 '>{playlist?.description}</p>
         </div>
       </section>
 
