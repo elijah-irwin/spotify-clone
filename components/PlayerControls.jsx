@@ -91,8 +91,8 @@ const PlayerControls = () => {
 
       {/* Middle */}
       <div className='flex items-center justify-center space-x-10'>
-        <SwitchHorizontalIcon className='button hidden md:inline' />
-        <RewindIcon className='button' />
+        <SwitchHorizontalIcon className='dead-button hidden md:inline' />
+        <RewindIcon className='dead-button' />
         {isPlaying ? (
           <PauseIcon
             className='button w-10 h-10 fill-white'
@@ -104,8 +104,8 @@ const PlayerControls = () => {
             onClick={handlePlayPause}
           />
         )}
-        <FastForwardIcon className='button' />
-        <ReplyIcon className='button hidden md:inline' />
+        <FastForwardIcon className='dead-button' />
+        <ReplyIcon className='dead-button hidden md:inline' />
       </div>
 
       {/* Right */}
