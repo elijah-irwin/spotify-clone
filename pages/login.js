@@ -5,10 +5,20 @@ import { getProviders, signIn } from 'next-auth/react';
  ***************************************/
 const Login = ({ providers }) => {
   return (
-    <div className='min-h-screen bg-black grid lg:grid-cols-2 items-center gap-15 px-5 md:px-40 py-10 xl:px-80 gap-y-20  text-white'>
+    <div className='min-h-screen bg-black grid xl:grid-cols-2 items-center gap-15 px-5 md:px-40 py-10 xl:px-80 gap-y-20  text-white'>
       {/* Left */}
-      <div className=''>
-        <h1 className='font-bold text-5xl md:text-8xl mb-10'>Spotify Clone</h1>
+      <div>
+        <h1 className='font-bold text-5xl md:text-8xl mb-6'>Spotify Clone</h1>
+        <h2 className='mb-10 '>
+          by{' '}
+          <a
+            href='https://mak-irwin.netlify.app/'
+            target='_blank'
+            rel='noopener noreferrer'
+            className='font-bold text-green-400 underline cursor-pointer transition hover:text-green-500'>
+            mak
+          </a>
+        </h2>
         <h3 className='font-bold text-xl pb-2'>Disclaimer</h3>
         <p className='pb-2'>
           Turns out Spotify doesnt really want you building an alternative
@@ -52,7 +62,7 @@ const Login = ({ providers }) => {
         {Object.values(providers).map(provider => (
           <div key={provider.name}>
             <button
-              className='bg-[#18D860] text-white py-3 px-5 m-10 rounded-full'
+              className='bg-[#21b454] text-white py-3 px-5 m-10 rounded-full'
               onClick={() => signIn(provider.id, { callbackUrl: '/' })}>
               Login with {provider.name}
             </button>
