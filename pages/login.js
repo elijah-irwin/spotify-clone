@@ -21,9 +21,8 @@ const Login = ({ providers }) => {
         </h2>
         <h3 className='font-bold text-xl pb-2'>Disclaimer</h3>
         <p className='pb-2'>
-          Turns out Spotify doesnt really want you building an alternative
-          web-player. As such, the following project simply allows you to
-          control the playback state of your current Spotify session.
+          The following project only allows you to control the playback state of
+          your current Spotify session.
         </p>
         <p className='pb-6'>
           <span className='font-bold'>Ex. </span>Open and play a song on any
