@@ -1,5 +1,4 @@
 import { getSession } from 'next-auth/react';
-import Head from 'next/head';
 
 // Components
 import Center from '../components/Center';
@@ -12,15 +11,6 @@ import Sidebar from '../components/Sidebar';
 const Home = () => {
   return (
     <div className='bg-black h-screen overflow-hidden'>
-      <Head>
-        <title>Spotify Clone</title>
-        <meta
-          name='description'
-          content='Spotify clone for educational purposes.'
-        />
-        <link rel='icon' href='/favicon.ico' />
-      </Head>
-
       <main className='flex'>
         <Sidebar />
         <Center />
