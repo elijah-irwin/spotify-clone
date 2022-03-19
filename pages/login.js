@@ -15,21 +15,24 @@ const Login = ({ providers }) => {
             href='https://mak-irwin.netlify.app/'
             target='_blank'
             rel='noopener noreferrer'
-            className='font-bold text-green-400 underline cursor-pointer transition hover:text-green-500'>
+            className='font-bold text-green-400 underline transition hover:text-green-500'>
             mak
           </a>
         </h2>
         <h3 className='font-bold text-xl pb-2'>Disclaimer</h3>
         <p className='pb-2'>
-          The following project only allows you to control the playback state of
-          your current Spotify session.
+          Turns out the developer mode of the Spotify API only gives users I
+          explicitly input permission to authorize with this app, making it a
+          less than ideal portfolio project. 😭
         </p>
         <p className='pb-6'>
-          <span className='font-bold'>Ex. </span>Open and play a song on any
-          actual Spotify player (web-player, desktop app, or mobile app). You
-          can then use this Spotify Clone project to browse your playlists, play
-          songs, and change the volume. Actual playback will occur in the
-          originally selected player.
+          For now, please refer to the Github{' '}
+          <a
+            href='https://github.com/irwinmck/spotify-clone'
+            className='text-green-400 underline font-bold transition hover:text-green-500'>
+            repo
+          </a>{' '}
+          for screen caps of the project.
         </p>
         <h3 className='font-bold text-xl pb-2'>Features</h3>
         <div className='grid grid-cols-3 gap-x-10 gap-y-1 pb-6'>
@@ -38,7 +41,7 @@ const Login = ({ providers }) => {
           <p>Song Selection</p>
           <p>Volume Controls</p>
           <p>Album Artwork</p>
-          <p>Session Persistance</p>
+          <p>Session Persistence</p>
         </div>
         <h3 className='font-bold text-xl pb-2'>Tools</h3>
         <div className='grid grid-cols-3 gap-x-10 gap-y-1'>
