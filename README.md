@@ -13,7 +13,8 @@ A quick build to continue gaining experience working with TailwindCSS (😍). Th
 
 See it live: https://mak-spotify-clone.vercel.app/login
 
-![image](https://user-images.githubusercontent.com/20545023/159194597-d15de075-8021-4d41-a134-753d6abe6950.png)
+![image](https://user-images.githubusercontent.com/20545023/159194653-2bad0139-7451-4fc1-a7a0-f4dfcd73890c.png)
+
 
 
 
